@@ -140,6 +140,8 @@ search.addEventListener('submit', (event) => {
 });
 
 async function getDataUsingCityName(cityName){
+    cityNotFound.classList.remove('flex');
+    cityNotFound.classList.add('hidden');
     loader.classList.remove('hidden');
     loader.classList.add('flex');
     try{
