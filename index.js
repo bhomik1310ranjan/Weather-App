@@ -8,7 +8,7 @@ const weatherData = document.querySelector('[weather-data]');
 const grantAccessButton = document.querySelector('[grant-access-button]');
 const loader = document.querySelector('[loader]');
 const cityNotFound = document.querySelector('[city-not-found]')
-const unableToAccessLocation = document.querySelector('[enable-to-access-location]');
+const unableToAccessLocation = document.querySelector('[unable-to-access-location]');
 let currentTab = userTab;
 const API_KEY = '5b7b62554459f67a4db71c966351e50c';
 
@@ -27,7 +27,6 @@ function failedToGetLocation(){
     grantAccess.classList.remove('flex');
     grantAccess.classList.add('hidden');
     unableToAccessLocation.classList.remove('hidden');
-    unableToAccessLocation.classList.add('flex');
 }
 
 grantAccessButton.addEventListener('click', async () => {
@@ -61,7 +60,7 @@ function switchTab(clickedTab){
             search.classList.add('flex');
             cityNotFound.classList.remove('flex');
             cityNotFound.classList.add('hidden');
-        unableToAccessLocation.classList.add('hidden');
+            unableToAccessLocation.classList.add('hidden');
         }else{
             search.classList.remove('flex');
             search.classList.add('hidden');
