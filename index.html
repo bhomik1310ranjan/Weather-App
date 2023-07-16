@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather App</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>
+        <link rel = "icon" href = "assets/favicon.ico"/>
+        <link rel = "stylesheet" href = "styles.css"/>
+    </head>
+    <body>
+        <main class = "w-full h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-b from-spaceCadet to-steelBlue">
+            <div class = "w-10/12 md:w-4/5 max-w-xl flex flex-col space-y-10 mx-auto my-12">
+                <h1 class = "text-cultured font-rubik text-3xl md:text-4xl font-semibold text-center tracking-wider uppercase">Weather App</h1>
+                <div class = "flex justify-between items-center gap-6">
+                    <p class = "text-cultured font-rubik cursor-pointer px-2.5 py-1.5 tracking-wider leading-none rounded text-center" userTab>Your Weather</p>
+                    <p class = "text-cultured font-rubik cursor-pointer px-2.5 py-1.5 tracking-wider leading-none rounded text-center" searchTab>Search Weather</p>
+                </div>
+
+                <div class = "hidden flex-col items-center space-y-2" grant-access>
+                    <img src = "assets/location.png" loading = "lazy" class = "w-20"/>
+                    <p class = "text-cultured font-rubik text-2AndHalfXl font-semibold text-center leading-tight pt-4">Grant Location Access</p>
+                    <p class = "text-cultured font-rubik font-normal text-center leading-tight pb-4">Allow Access To Get Weather Information</p>
+                    <button class = "text-cultured font-rubik bg-steelBlue uppercase px-7 py-2.5 leading-none rounded-md tracking-wider" grant-access-button>Grant Access</button>
+                </div>
+
+                <form class = "hidden justify-between items-center gap-x-2" search>
+                    <input type = "text" placeholder = "Search for city ..." class = "w-11/12 bg-shadowBlue px-2.5 py-1.5 vs:px-3 vs:py-2.5 leading-none text-cultured font-rubik text-lg rounded-xl placeholder:text-azureishWhite outline-none border-2 border-transparent focus:border-azureishWhite transition-colors duration-75" search-input/>
+                    <button class = "w-11 aspect-square rounded-full bg-steelBlue grid place-items-center"><i class="fa-solid fa-magnifying-glass text-cultured"></i></button>
+                </form>
+
+                <div class = "hidden flex-col items-center space-y-4" weather-data>
+                    <div class = "flex items-center gap-x-2">
+                        <p class = "text-cultured font-rubik text-3xl tracking-wider" city></p>
+                        <img loading = "lazy" class = "w-8" flag/>
+                    </div>
+                    <p class = "text-cultured font-rubik text-2xl capitalize" weather></p>
+                    <img loading = "lazy" class = "w-20" weather-image/>
+                    <p class = "font-rubik text-cultured tracking-wider font-semibold text-4xl"><span temperature></span> &deg;C</p>
+                    <div class = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class = "flex flex-col items-center gap-y-2 bg-ceil p-4 rounded-md">
+                            <img src = "assets/wind.png" loading = "lazy" class = "w-20"/>
+                            <p class = "font-rubik text-cultured uppercase text-2xl tracking-wider">Windspeed</p>
+                            <p class = "font-rubik text-cultured text-2xl tracking-wider" windspeed></p>
+                        </div>
+                        <div class = "flex flex-col items-center gap-y-2 bg-ceil p-4 rounded-md">
+                            <img src = "assets/humidity.png" loading = "lazy" class = "w-20"/>
+                            <p class = "font-rubik text-cultured uppercase text-2xl tracking-wider">Humidity</p>
+                            <p class = "font-rubik text-cultured text-2xl tracking-wider" humidity></p>
+                        </div>
+                        <div class = "flex flex-col items-center gap-y-2 bg-ceil p-4 rounded-md">
+                            <img src = "assets/cloud.png" loading = "lazy" class = "w-20"/>
+                            <p class = "font-rubik text-cultured uppercase text-2xl tracking-wider">Clouds</p>
+                            <p class = "font-rubik text-cultured text-2xl tracking-wider" clouds></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "hidden flex-col items-center space-y-4 pt-16" loader>
+                    <div class = "w-28 aspect-square rounded-full border-8 border-apple border-b-transparent grid place-items-center animate-spin-clockwise-slow">
+                        <div class = "w-20 aspect-square rounded-full border-7 border-eucalyptus border-t-transparent grid place-items-center animate-spin-anticlockwise">
+                            <div class = "w-12 aspect-square rounded-full border-6 border-seaSerpent border-r-transparent animate-spin-clockwise-fast"></div>
+                        </div>
+                    </div>
+                    <p class = "text-xl font-rubik font-medium tracking-wider text-cultured">Loading</p>
+                </div>
+
+                <div class = "hidden flex-col items-center pt-6" city-not-found>
+                    <img src = "assets/not-found.png" loading = "lazy" class = "w-56"/>
+                    <p class = "text-xl font-rubik font-medium tracking-wider text-cultured">City not found</p>
+                </div>
+
+                <div class = "hidden justify-center pt-8" enable-to-access-location>
+                    <p class = "text-xl font-rubik font-medium tracking-wider text-cultured">Enable to access your location</p>
+                </div>
+            </div>
+        </main>
+        <script src = "index.js"></script>
+        <script src="https://kit.fontawesome.com/463da5afdf.js" crossorigin="anonymous"></script>
+    </body>
+</html>
